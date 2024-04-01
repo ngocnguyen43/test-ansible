@@ -1,0 +1,11 @@
+- name:
+- name: Check NginX configuration
+  ansible.builtin.command: "nginx -t"
+  register: result
+  changed_when: "result.rc != 0"
+
+- name: Restart NginX - after config check
+  ansible.builtin.service:
+    name: nginx
+    state: restarted
+    enabled: true

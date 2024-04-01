@@ -1,0 +1,12 @@
+- name: My first play
+  hosts: ec2
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+
+    - name: Print message
+      ansible.builtin.debug:
+        msg: Hello world
+    # - name: Create tmp file
+    #   ansible.builtin.shell: echo "abc" > /tmp/test
+    - name:
